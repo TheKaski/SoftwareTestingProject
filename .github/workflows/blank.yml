@@ -43,8 +43,9 @@ jobs:
       steps:
         # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
         - uses: actions/checkout@v3
-        - name: Coveralls GitHub Action
-          uses: coverallsapp/github-action@v2.2.3
 
         - name: Run Tests
           run: npm run coverage
+
+         - name: Coveralls GitHub Action
+          uses: coverallsapp/github-action@v2.2.3
