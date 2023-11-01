@@ -1,0 +1,15 @@
+{
+  "name": "softwaretestingproject",
+  "version": "1.0.0",
+  "description": "This is a repository containing files for school relates testing project",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --exit --timeout 10000 --recursive"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.3.10",
+    "mocha": "^10.2.0"
+  }
+}
