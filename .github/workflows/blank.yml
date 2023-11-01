@@ -24,10 +24,6 @@ jobs:
 
       - name: Install project
         run: npm install
-      - name: Run tests
-        run: npm run test
-      - name: Run coverage
-        run: npm run coverage
   
   testJob:
     # The type of runner that the job will run on
@@ -41,3 +37,14 @@ jobs:
         - name: Run Tests
           run: npm install
 
+  coverageJob:
+    # The type of runner that the job will run on
+      needs: build
+      runs-on: ubuntu-latest
+      # Steps represent a sequence of tasks that will be executed as part of the job
+      steps:
+        # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+        - uses: actions/checkout@v3
+
+        - name: Run Tests
+          run: npm run coverage
