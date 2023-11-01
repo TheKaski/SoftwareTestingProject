@@ -4,12 +4,13 @@
   "description": "This is a repository containing files for school relates testing project",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --exit --timeout 10000 --recursive"
+    "test": "mocha  --timeout 10000 --recursive"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "chai": "^4.3.10",
-    "mocha": "^10.2.0"
+    "mocha": "^10.2.0",
+    "software-testing-assignment": "github:otula/COMP.SE.200-2023-2024-1"
   }
 }
