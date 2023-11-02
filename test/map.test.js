@@ -1,7 +1,8 @@
-const chai = require('chai');
-var expect = require('chai').expect;
-const { assert } = require('chai');
-const testfiles = import('software-testing-assignment');
+import {default as at} from "software-testing-assignment/src/map.js";
+import { assert } from 'chai';
+import { expect } from 'chai';
+import { should } from 'chai';
+
 
 describe('', () => {
   it("", () => {
