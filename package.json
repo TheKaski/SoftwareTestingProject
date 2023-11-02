@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "mocha --timeout 10000 --recursive",
-    "coverage": "npm test && nyc report --reporter=text-lcov | coveralls"
+    "coverage": "NODE_ENV=test npm test && nyc report --reporter=text-lcov | coveralls"
   },
   "author": "",
   "license": "ISC",
