@@ -2,6 +2,7 @@ import {default as at} from "software-testing-assignment/src/at.js";
 import { assert } from 'chai';
 import { expect } from 'chai';
 import { should } from 'chai';
+import "mocha";
 
 const object = { 'a': [{ 'b': { 'c': 3 } }, 4] }
 

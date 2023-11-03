@@ -6,11 +6,12 @@
   "type": "module",
   "scripts": {
     "test": "mocha --timeout 10000 --recursive",
-    "coverage": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
+    "coverage": "c8 npm test --exit | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "c8": "^8.0.1",
     "chai": "^4.3.10",
     "istanbul": "^0.4.5",
     "mocha": "^10.2.0",
