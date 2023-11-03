@@ -6,12 +6,13 @@
   "type": "module",
   "scripts": {
     "test": "mocha --timeout 10000 --recursive",
-    "coverage": "YOURPACKAGE_COVERAGE=1 ./node_modules/.bin/mocha test -R mocha-lcov-reporter | ./node_modules/coveralls/bin/coveralls.js" 
+    "coverage": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "chai": "^4.3.10",
+    "istanbul": "^0.4.5",
     "mocha": "^10.2.0",
     "software-testing-assignment": "github:otula/COMP.SE.200-2023-2024-1"
   },
