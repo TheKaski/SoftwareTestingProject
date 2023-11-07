@@ -1,4 +1,4 @@
-import {default as at} from "software-testing-assignment/src/countBy.js";
+import {default as at} from "../src/countBy.js";
 import { assert } from 'chai';
 import { expect } from 'chai';
 import { should } from 'chai';
