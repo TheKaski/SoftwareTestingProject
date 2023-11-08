@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "mocha --timeout 10000 --recursive",
-    "coverage": "c8 npm run test && c8 report --reporter=text-lcov",
+    "coverage": "c8 npm run test && c8 report --reporter=lcov",
     "coveralls": " coveralls && rm -rf ./coverage"
   },
   "author": "",
