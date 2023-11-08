@@ -49,6 +49,11 @@ jobs:
         - name: Run Coverage
           run: npm run coverage
 
+  coverallsJob:
+    # The type of runner that the job will run on
+      needs: coverageJob
+      runs-on: ubuntu-latest
+      steps:
         - name: Coveralls GitHub Action
           uses: coverallsapp/github-action@v2.2.3
           with:
