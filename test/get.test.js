@@ -1,4 +1,4 @@
-import {default as at} from "software-testing-assignment/src/get.js";
+import {default as at} from "../src/get.js";
 import { assert } from 'chai';
 import { expect } from 'chai';
 import { should } from 'chai';
