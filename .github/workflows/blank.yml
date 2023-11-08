@@ -43,9 +43,7 @@ jobs:
       steps:
         # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
         - uses: actions/checkout@v3
-          with:
-            github-token: ${{ secrets.GITHUB_TOKEN }}
-
+          
         - name: Install project
           run: npm install
         - name: Run Coverage
