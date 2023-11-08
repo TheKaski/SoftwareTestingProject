@@ -68,8 +68,20 @@ describe("Capitalize", () => {
       expect(capitalize("\nabc")).to.equal("\nabc");
     })
   });
-});
 
+  describe("Testing with invalid input types", () => {
+    it("Testing with number", () => {
+      expect(capitalize(1)).to.equal('1');
+    })
+    it("Testing with null", () => {
+      expect(capitalize(null)).to.equal('');
+    })
+    it("Testing with null", () => {
+      expect(capitalize("null")).to.equal('Null');
+    })
+
+  });
+});
 
 
 /*PLANNING THE TEST CASES FOR THIS TEST:
