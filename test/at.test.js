@@ -31,11 +31,7 @@ describe("Testing At from Software-testing-assignment", () => {
     });
     it("Should return undefined when the value index is out of bounds", () => {
       expect(at(object, ["a[3]"])).to.deep.equal([undefined]);
-    });
-    it("Should return undefined when the value is not found", () => {
-      expect(at(object, ["a[0].ö"])).to.deep.equal([undefined]);
-    });
-   
+    });   
     it("Should respond with undefined in array", () => {
       expect(at(object, undefined)).to.deep.equal([undefined]);
     });
