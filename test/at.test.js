@@ -63,6 +63,15 @@ describe('Testing At from Software-testing-assignment', () => {
     it("Should return with array of undefined values when object is empty", () => {
       expect(at({}, ['a[0].b.c', 'a[1]', 'a'])).to.deep.equal([undefined, undefined, undefined]);
     });
+    it("Should return with empty array when object is undefined and path is empty", () => {
+      expect(at(undefined, [])).to.deep.equal([]);
+    });
+    it("Should return with empty array when object is null and path is empty", () => {
+      expect(at(null, [])).to.deep.equal([]);
+    });
+    it("Should return with empty array when object is empty and path is empty", () => {
+      expect(at({}, [])).to.deep.equal([]);
+    });
   });
 });
 
