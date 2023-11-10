@@ -14,7 +14,7 @@ describe("DefaultTo", () => {
       expect(defaultTo(null, "default")).to.equal("default");
     });
     
-    it("Should return the default value when value is undefined", () => {
+    it("Should return the default value when value is NaN", () => {
       expect(defaultTo(NaN, "default")).to.equal("default");
     });
   });
