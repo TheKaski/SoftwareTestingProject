@@ -55,4 +55,26 @@ describe("Words", () => {
       expect(words("Hello! I'm tester", /[^, ]+/g)).to.deep.equal(["Hello!", "I'm", "tester"]);
     });
   });
+
+  describe("Testing with pattern", () => {
+    it("Should return an array of matched words when string.match(pattern) is truthy", function () {
+      const inputString = "apple, orange, banana";
+      const pattern = /[^,]+/g;
+
+      const result = words(inputString, pattern);
+
+      // Assert that the result is an array containing the matched words
+      expect(result).to.be.an('array').that.deep.equals(['apple', ' orange', ' banana']);
+    });
+
+    it("Should return an empty array when string.match(pattern) is falsy", function () {
+      const inputString = "apple, orange, banana";
+      const pattern = /nonexistentpattern/;
+
+      const result = words(inputString, pattern);
+
+      // Assert that the result is an empty array
+      expect(result).to.be.an('array').that.is.empty;
+    });
+  });
 });

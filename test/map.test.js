@@ -23,16 +23,31 @@ function getName(user) {
 
 describe("Map", () => {
   describe("Testing with null, Nan, undefined", () => {
+    const iteratee = (value) => value;
+
     it("Should return array with null", () => {
-      expect(map([null], square)).to.deep.equal([null])
+      expect(map([null], iteratee)).to.deep.equal([null])
     });
     it("Should return array with undefined", () => {
-      expect(map([undefined], square)).to.deep.equal([undefined])
+      expect(map([undefined], iteratee)).to.deep.equal([undefined])
     });
     it("Should return array with NaN", () => {
-      expect(map([NaN], square)).to.deep.equal([NaN])
+      expect(map([NaN], iteratee)).to.deep.equal([NaN])
     });
   });
+
+  describe("Testing with null, Nan, undefined", () => {
+    const iteratee = (value) => value;
+    it("Should set length to 0 when array is null", () => {
+      const result = map(null, iteratee);
+      expect(result.length).to.deep.equal(0)
+    });
+    it("Should set length to 0 when array is undefined", () => {
+      const result = map(undefined, iteratee);
+      expect(result.length).to.deep.equal(0)
+    });
+  });
+
   describe("Testing with numbers", () => {
     it("Should return values squared", () => {
       expect(map([4,8], square)).to.deep.equal([16, 64])
