@@ -11,6 +11,18 @@ describe("Words", () => {
     });
   });
 
+  describe("Testing with undefined null and Nan values", () => {
+    it("Should return an empty array when value is undefined", () => {
+      expect(words(undefined)).to.deep.equal([]);
+    });
+    it("Should return an empty array when value is null", () => {
+      expect(words(null)).to.deep.equal([]);
+    });
+    it("Should return an empty array when value is NaN", () => {
+      expect(words(NaN)).to.deep.equal([]);
+    });
+  });
+
   describe("Testing with different strings", () => {
     it("Should return an array with one element", () => {
       expect(words("hello")).to.deep.equal(["hello"]);
