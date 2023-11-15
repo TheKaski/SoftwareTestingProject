@@ -75,6 +75,13 @@ describe("isEmpty", () => {
       const emptyMap = new Map();
       expect(isEmpty(emptyMap)).to.be.true;
     });
+    it("Should return false for a non-empty arguments object", function () {
+      const getArgumentsObject = function () {
+        return arguments;
+      };    
+      const result = isEmpty(getArgumentsObject());
+        expect(result).to.be.false;
+    });
   });
 
   describe("Testing with non-empty instances of various types", () => {
@@ -105,5 +112,12 @@ describe("isEmpty", () => {
     it("Should return false with a prototype", () => {
       expect(isEmpty(Object.prototype)).to.be.false;
     }); 
+    it("Should return false for a non-empty arguments object", function () {
+      const getArgumentsObject = function () {
+        return arguments;
+      };    
+      const result = isEmpty(getArgumentsObject(1, 2, 3));
+        expect(result).to.be.false;
+    });
   });
 });
