@@ -102,5 +102,8 @@ describe("isEmpty", () => {
       const map = new Map([['key', 'value']]);
       expect(isEmpty(map)).to.be.false;
     });
+    it("Should return false with a prototype", () => {
+      expect(isEmpty(Object.prototype)).to.be.false;
+    }); 
   });
 });
