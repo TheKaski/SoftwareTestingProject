@@ -5,8 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "mocha --timeout 10000 --recursive",
-    "coverage": "c8 npm run test || true && c8 report --reporter=lcov"
+    "test": "c8 mocha --timeout 10000 --recursive || true",
+    "coverage": "c8 report --reporter=lcov"
   },
   "author": "",
   "license": "ISC",
