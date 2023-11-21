@@ -76,7 +76,7 @@ describe("isEmpty", () => {
       expect(isEmpty(emptyMap)).to.be.true;
     });
     it("Should return true with an undefined buffer", () => {
-      const emptyBuffer = Buffer.alloc(undefined);
+      const emptyBuffer = Buffer.allocUnsafe(10);
       expect(isEmpty(emptyBuffer)).to.be.true;
     });
     it("Should return true for an empty TypedArray", () => {
