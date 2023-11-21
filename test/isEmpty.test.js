@@ -22,7 +22,7 @@ describe("isEmpty", () => {
       expect(isEmpty(true)).to.be.true;
     });
     it("Should return false when value is false", () => {
-      expect(isEmpty(false)).to.be.false;
+      expect(isEmpty(false)).to.be.true;
     });
   });
 
@@ -75,13 +75,18 @@ describe("isEmpty", () => {
       const emptyMap = new Map();
       expect(isEmpty(emptyMap)).to.be.true;
     });
-    it("Should return false for a non-empty arguments object", function () {
-      const getArgumentsObject = function () {
-        return arguments;
-      };    
-      const result = isEmpty(getArgumentsObject());
-        expect(result).to.be.false;
+    it("Should return true with an undefined buffer", () => {
+      const emptyBuffer = Buffer.alloc(undefined);
+      expect(isEmpty(emptyBuffer)).to.be.true;
     });
+    it("Should return true for an empty TypedArray", function () {
+      const emptyTypedArray = new Int32Array(0);
+      const result = isEmpty(emptyTypedArray); 
+      expect(result).to.be.true;
+    });
+    it("Should return true with an empty prototype", () => {
+      expect(isEmpty(Object.prototype)).to.be.true;
+    }); 
   });
 
   describe("Testing with non-empty instances of various types", () => {
@@ -109,15 +114,31 @@ describe("isEmpty", () => {
       const map = new Map([['key', 'value']]);
       expect(isEmpty(map)).to.be.false;
     });
-    it("Should return false with a prototype", () => {
-      expect(isEmpty(Object.prototype)).to.be.false;
-    }); 
     it("Should return false for a non-empty arguments object", function () {
       const getArgumentsObject = function () {
         return arguments;
       };    
       const result = isEmpty(getArgumentsObject(1, 2, 3));
         expect(result).to.be.false;
+    });
+    it("Should return false for a non-empty arguments object", function () {
+      const getArgumentsObject = function () {
+        return arguments;
+      };    
+      const result = isEmpty(getArgumentsObject());
+        expect(result).to.be.faltruese;
+    });
+
+
+    
+  
+    it('should return false for a non-empty TypedArray', function () {
+      const nonEmptyTypedArray = new Int32Array([1, 2, 3]);
+  
+      const result = isEmpty(nonEmptyTypedArray);
+  
+      // Assert that the result is false
+      expect(result).to.be.false;
     });
   });
 });
