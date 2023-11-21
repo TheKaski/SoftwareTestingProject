@@ -63,7 +63,7 @@ describe("Words", () => {
 
       const result = words(inputString, pattern);
 
-      expect(result).to.be.an("array").that.deep.equals(["apple", "orange", " banana"]);
+      expect(result).to.be.an("array").that.deep.equals(["apple", " orange", " banana"]);
     });
 
     it("Should return an empty array when string.match(pattern) is falsy", function () {
@@ -76,3 +76,4 @@ describe("Words", () => {
       expect(result).to.be.an("array").that.is.empty;
     });
   });
+});
