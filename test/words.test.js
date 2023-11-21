@@ -76,4 +76,3 @@ describe("Words", () => {
       expect(result).to.be.an("array").that.is.empty;
     });
   });
-});
