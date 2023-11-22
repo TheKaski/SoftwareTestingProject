@@ -81,6 +81,25 @@ describe("EndsWith", () => {
       expect(endsWith("abc", "b", NaN)).to.be.false;
     });
   });
+
+  describe("Test with undefined or null strings", () => {
+    it("Should return false when string is undefined", () => {
+      expect(endsWith(undefined, "b")).to.be.false
+    });
+    it("Should return false when string is Null", () => {
+      expect(endsWith(null, "b")).to.be.false
+    });
+  });
+
+  describe("Test with undefined or null targets", () => {
+    it("Should return false when string is undefined", () => {
+      expect(endsWith("abc", undefined)).to.be.false
+    });
+    it("Should return false when string is Null", () => {
+      expect(endsWith("abc", null)).to.be.false
+    });
+  });
+
 });
 
 /*
