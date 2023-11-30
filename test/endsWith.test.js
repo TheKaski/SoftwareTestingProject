@@ -92,10 +92,10 @@ describe("EndsWith", () => {
   });
 
   describe("Test with undefined or null targets", () => {
-    it("Should return false when string is undefined", () => {
+    it("Should return false when target is undefined", () => {
       expect(endsWith("abc", undefined)).to.be.false
     });
-    it("Should return false when string is Null", () => {
+    it("Should return false when target is Null", () => {
       expect(endsWith("abc", null)).to.be.false
     });
   });
